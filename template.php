@@ -130,3 +130,11 @@ function teupaga_preprocess_block(&$variables, $hook) {
   //}
 }
 // */
+
+/**
+ * Change the order of contols in the user-login form.
+ */
+function teupaga_form_user_login_block_alter(&$form) {
+  $form['actions']['#weight'] = 5;
+  $form['links']['#weight'] = 10;
+}
