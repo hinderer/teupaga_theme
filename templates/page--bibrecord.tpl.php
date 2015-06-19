@@ -61,7 +61,7 @@
               ),
             )); ?>
 
-            <a href="/teupaga/inscription">Inscription | Connexion</a>
+            <a href="/inscription">Inscription | Connexion</a>
             
           </nav>
           <?php endif; ?> 
