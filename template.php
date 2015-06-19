@@ -138,3 +138,15 @@ function teupaga_form_user_login_block_alter(&$form) {
   $form['actions']['#weight'] = 5;
   $form['links']['#weight'] = 10;
 }
+
+/**
+* Add / modify variables before the page renders.
+*/
+function teupaga_preprocess_page(&$vars) {
+// custom content type page template
+  // Renders a new page template to the list of templates used if it exists
+  if (isset($vars['node']->type)) {
+// This code looks for any page--custom_content_type.tpl.php page
+    $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
+  }
+}
