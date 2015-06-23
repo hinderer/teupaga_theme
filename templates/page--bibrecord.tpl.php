@@ -71,7 +71,7 @@
         </div>  
         <div class="logo-small">
           
-          <a href="<?php print $front_page; ?>"><img src= "/teupaga/sites/default/files/logo-teupaga-2.jpg" /></a>
+          <a href="<?php print $front_page; ?>"><img src= "/sites/default/files/logo-teupaga-2.jpg" /></a>
         </div>
 
         <?php print render($page['navigation']); ?>
