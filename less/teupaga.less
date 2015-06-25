@@ -57,7 +57,11 @@ h2, h1{
 	width: 100%;
 	.border-bottom;
 	padding: 0px 0px 20px;
-	margin-top: 30px !important;
+	margin: 30px 0px 45px !important;
+}
+
+h2{
+	margin-bottom: 20px !important;
 }
 
 /**
@@ -87,21 +91,26 @@ HEADER
 	//region header
 	.region-header{
 		position: relative;
-		margin-top: 117px;
+		margin-top: 96px;
 	}
 
 	//menu
-	#block-system-main-menu ul.menu{
+	#block-menu-block-1 ul.menu{
 		padding-left: 0;
+		
+		@media @laptop{
+			padding-left: 130px;
+		}
 
 		li{
 			list-style: none;
 			display: inline-block;
-			margin: 0 15px;
-			font-size: normal;
+			margin: 0 9px;
+			font-size: @normal;
 
 			a{
 				text-transform: uppercase;
+
 				&:hover{
 					color: @darkgray;
 
@@ -113,7 +122,6 @@ HEADER
 				&.active{
 					color: @red;
 				}
-
 			}
 
 			//active
@@ -130,24 +138,13 @@ HEADER
 		}
 	}
 
-	//conexion
-	#block-block-5{
-		position: absolute;
-		top: 0;
-		right: 2%;
-
-		p{
-			margin: 0;
-		}
-	}
-
 	//logo
 	.header__logo{
 		position: absolute;
 		left: 0;
 
 		.header__logo-image{
-			width: 180px;
+			width: 140px;
 		}
 	}
 
@@ -323,7 +320,7 @@ NAVIGATION
 				opacity: 1;
 				-webkit-transition: all .5s ease-in;
 	    		transition: all .5s ease-in;
-	    		padding: 0px 0px 40px 0px;		
+	    		padding: 0px;		
 			}
 		}	
 
@@ -360,7 +357,6 @@ NAVIGATION
 		z-index: 14;
 	}
 }
-
 
 /**
  FRONT
@@ -426,104 +422,6 @@ NAVIGATION
 }
 
 /**
-LOGIN
-**/
-
-.page-node-1 {
-	overflow-x: hidden;
-
-	article{
-		@media @laptop{
-			float: right;
-			width: 65%;
-			margin-top: 10px;
-			.border-left;
-  			padding-left: 5%;
-		}
-
-		form{
-			input{
-				width: 100%;
-			}
-
-			.form-item-submitted-terms-of-use-yes input,
-			.form-actions input{
-				float: left;
-				width: auto;
-				margin: 6px 6px 0 0;
-			}
-
-			.form-item {
-				margin: 0.5em 0;
-			}
-
-			@media @laptop{
-				margin-top: 55px;
-			}
-		}
-	}
-
-	h1{
-		margin-top: 350px !important;
-		
-		@media @laptop{
-			position: absolute;
-			width: 65%;
-			border-bottom: none;
-			right: 0%;
-			margin-top: 101px !important;
-			text-align: left;
-		}
-	}
-
-	#block-user-login{
-		position: absolute;
-		top: 190px;
-		width: 98%;
-		z-index: -1;
-
-		form{
-			text-align: center;
-
-			@media @laptop{
-				text-align: left;
-			}
-		}
-
-		@media @laptop{
-			float: left;
-			width: 27%;
-			position: relative;
-			top: 0;
-			width: 25%;
-		}
-
-		ul{
-			padding: 0;
-		}
-
-		li{
-			list-style: none;
-
-			a{
-				text-decoration: underline;
-			}
-		}	
-
-		h2{
-			width: 96%;
-			margin-top: 10px !important;
-
-			@media @laptop{
-				border-bottom: none;
-				text-align: left;
-				padding-bottom: 0;
-			}
-		}	
-	}
-}
-
-/**
 CONTACT
 **/
 
@@ -532,7 +430,8 @@ CONTACT
 
 	//formulaire
 	form{
-		margin-top: 290px;
+		margin-top: 50px;
+		.border-top;
 
 		@media @laptop{
 			float: right;
@@ -546,6 +445,7 @@ CONTACT
 			padding-left: 5%;
 			min-height: 550px;
 			margin-bottom: 100px;
+			border-top: none;
 		}
 
 		input{
@@ -570,51 +470,41 @@ CONTACT
 		}
 	}
 
-	h1{
-		.hide;
-	}
-
 	//infos pratiques
-	#block-block-2{
-		position: absolute;
-		top: 150px;
-		width: 100%;
-		z-index: -1;
-
-		@media @laptop{
-			position: relative;
-			top: 0;
-		}
-
-		p{
-			margin-top: 42px;
+	#main{
+		.block{
 			text-align: center;
-			padding-bottom: 42px;
 
 			@media @laptop{
 				float: left;
 				width: 27%;	
-				margin-top: 77px;	
 				text-align: left;
 			}
-		}
 
-		ul{
-			padding: 0;
-		}
+			//copyright
+			&#block-block-9{
+				margin-top: 50px;
 
-		li{
-			list-style: none;
-		}	
-
-		h2{
-			width: 100%;
-			margin-top: 45px !important;
-
-			@media @laptop{
-				margin-top: 20px !important;
+				@media @laptop{
+					margin-top: 0; 
+				}
 			}
-		}	
+
+			//title
+			h2{
+				.hide;
+			}	
+		}
+	}
+
+	//copyright
+	#block-block-9{
+
+		@media @laptop{
+			width: 27%;	
+			float: left;
+			clear: both;
+		}
 	}
 }
 
@@ -659,8 +549,14 @@ CATALOGUE
 
 		@media @laptop{
 			width: 27%;
-			margin-top: 71px;
 			text-align: left;
+		}
+
+		&#block-facetapi-vynf9kwlh9j5udzejkzpddethrv1g9cl{
+			@media @laptop{
+				margin-top: 82px;
+			}
+			
 		}
 
 		h2{
@@ -669,6 +565,7 @@ CATALOGUE
 			padding: 20px 0 0;
 			line-height: 1em;
 			font-weight: 600;
+			margin-bottom: 0 !important;
 
 			@media @laptop{
 				text-align: left;
@@ -699,13 +596,6 @@ CATALOGUE
 					}
 				}
 			}
-
-			@media @laptop{
-				width: 25%;
-				position: relative;
-				float: left;
-				clear: both;
-			}
 		}
 	}
 
@@ -727,7 +617,11 @@ CATALOGUE
 
 		//results
 		.view-content{
-			padding: 20px 0 0;
+			padding: 0;
+
+			@media @laptop{
+				padding: 20px 0 0;
+			}
 
 			.views-row{
 
@@ -736,15 +630,39 @@ CATALOGUE
 					margin: 2%;
 				}
 
-				img{
-					.all-border;
-				}
-
 				h2{
 					padding: 0;
 					margin: 0 !important;
 				}
 
+				//type d'adaptations
+				.entity-field-collection-item{
+					width: 50px;
+					height: 57px;
+					display: inline-block;	
+					margin-top: 10px;
+							
+					.field-item{
+						text-indent: -5000px;
+						background: url("../images/b-abrege.jpg");
+						width: 50px;
+						height: 57px;
+						display: inline-block;
+						overflow: hidden;
+					}
+				}
+			}
+		}
+
+		//header
+		.view-header{
+			position: absolute;
+			width: 94%;
+			text-align: center;
+			margin: 60px auto 0;
+
+			@media @laptop{
+				margin-top: 30px;
 			}
 		}
 
@@ -771,6 +689,8 @@ CATALOGUE
 				}
 
 			  	.form-submit {
+			  		margin-top: 6em;
+
 					@media @laptop{
 						margin: -8px 0 0;
 						right: 0;
@@ -819,7 +739,7 @@ PAGE OUVRAGE
 
 	//global
 	.field-name-field-book-cover, 
-	.right{
+	.group-right{
 		width: 80%;
 		margin: 0 auto;
 	}
@@ -845,8 +765,8 @@ PAGE OUVRAGE
 		.border-bottom;
 
 		@media @laptop{
-			min-width: 45%;
-			max-width: 45%;
+			min-width: 25%;
+			max-width: 25%;
 			float: left;
 			.border-right;
 			padding: 0 5% 0 0;
@@ -860,10 +780,10 @@ PAGE OUVRAGE
 	}
 
 	//right
-	.right{
+	.group-right{
 
 		@media @laptop{
-			width: 45%;
+			width: 65%;
 			float: right;
 		}
 
@@ -893,28 +813,91 @@ PAGE OUVRAGE
 				clear: both;
 
 				@media @laptop{
-					clear: none;
+					clear: both;
 
 					.field-item{
-						clear: both;
+						
 						float: left;
 					}
 				}
 			}
 		}
 	}
-
-
 }
 
 /**
-NODE PAGE
+CONNEXION
 **/
-.node-type-page{
-	article{
-		padding-top: 31px;
+.not-logged-in .tabs-primary{
+	.hide;
+}
+
+//mot de passe oublié
+#block-block-8{
+	a{
+		text-decoration: underline;
 	}
 }
+
+/**
+TAXONOMY PAGE
+**/
+
+.page-taxonomy-term-{
+
+	//auteurs
+	.field-name-field-author-picture{
+		text-align: center;
+		margin-bottom: 30px;
+		padding-bottom: 30px;
+		.border-bottom;
+
+		@media @laptop{
+			min-width: 25%;
+			max-width: 25%;
+			float: left;
+			.border-right;
+			padding: 0 5% 0 0;
+			margin: 0;
+			border-bottom: none;
+
+			img{
+				min-width: 100%;
+			}
+		}
+	}
+
+	.right{
+		margin-bottom: 100px;
+
+		@media @laptop{
+			width: 65%;
+			
+			float: right;
+		}
+	}
+
+	//mosaique ouvrages relatifs
+	.view-affichage-taxo{
+		.mosaique;
+		clear: both;
+
+		a.active{
+			color: @darkgray;
+		}
+	}
+}
+
+/**
+REGION BOTTOM
+**/
+.region-bottom{
+	width: 98%;
+	margin: 0 auto;
+	text-align: center;
+	.border-top;
+}
+
 
 
 

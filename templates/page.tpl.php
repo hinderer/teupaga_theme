@@ -60,8 +60,6 @@
                 'class' => array('element-invisible'),
               ),
             )); ?>
-
-            <a href="/inscription">Inscription | Connexion</a>
             
           </nav>
           <?php endif; ?> 

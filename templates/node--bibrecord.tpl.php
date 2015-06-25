@@ -10,7 +10,7 @@
 <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
     <?php if ($title): ?>
-      <h1 class="page__title title" id="page-title"><div class="titre"><?php print $title; ?> de   </div><div class="auteur"><?php  print render($content['field_author_real_name']); ?></div></h1>
+      <h2 class="page__title title" id="page-title"><div class="titre"><?php print $title; ?> de   </div><div class="auteur"><?php  print render($content['field_author_taxonomy_name']); ?></div></h1>
     <?php endif; ?>
 
   <?php if ($title_prefix || $title_suffix || $display_submitted || $unpublished || !$page && $title): ?>
