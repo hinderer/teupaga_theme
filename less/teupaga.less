@@ -79,7 +79,6 @@ BREADCRUMB
 HEADER
 **/
 .header{
-	.hide;
 	text-align: center;
 	position: relative;
 	font-weight: normal;
@@ -87,11 +86,20 @@ HEADER
 	.border-bottom;
 	margin: 0 0.8%;
 	padding-bottom: 10px;
+	.hide;
+
+	@media @laptop{
+		.show;
+	}
 
 	//region header
 	.region-header{
 		position: relative;
 		margin-top: 96px;
+
+		@media @laptop{
+			margin-top: 0;
+		}
 	}
 
 	//menu
@@ -99,7 +107,7 @@ HEADER
 		padding-left: 0;
 		
 		@media @laptop{
-			padding-left: 130px;
+			padding: 74px 0 0 130px;
 		}
 
 		li{
@@ -130,11 +138,6 @@ HEADER
 					color: @red;
 				}
 			}
-
-			//sous-menus
-			li{
-				.hide;
-			}
 		}
 	}
 
@@ -142,6 +145,11 @@ HEADER
 	.header__logo{
 		position: absolute;
 		left: 0;
+		.hide;
+
+		@media @laptop{
+			.show;
+		}
 
 		.header__logo-image{
 			width: 140px;
@@ -637,18 +645,17 @@ CATALOGUE
 
 				//type d'adaptations
 				.entity-field-collection-item{
-					width: 50px;
-					height: 57px;
-					display: inline-block;	
+					width: 35px;
+					display: inline-block;
 					margin-top: 10px;
 							
 					.field-item{
-						text-indent: -5000px;
-						background: url("../images/b-abrege.jpg");
-						width: 50px;
-						height: 57px;
-						display: inline-block;
-						overflow: hidden;
+
+						img{
+							width: 100%;
+							height: auto;
+							border: none;
+						}
 					}
 				}
 			}
